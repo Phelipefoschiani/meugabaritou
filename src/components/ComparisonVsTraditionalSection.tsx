@@ -1,5 +1,5 @@
 import React from 'react';
-import { XCircle, CheckCircle2, Zap, ArrowRight, ShieldCheck, Lock } from 'lucide-react';
+import { XCircle, CheckCircle2, ArrowRight } from 'lucide-react';
 import { BrandIcon } from './BrandLogo';
 import { BrandName } from './BrandName';
 
@@ -117,8 +117,8 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
             {/* Title & Concise Copy */}
             <div className="space-y-2 max-w-xl mx-auto">
               <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
-                Pare de gastar horas em fóruns confusos.{' '}
-                <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
+                Pare de gastar horas em fóruns confusos.
+                <span className="block mt-1 sm:mt-1.5 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
                   Estude com foco cirúrgico.
                 </span>
               </h3>
@@ -140,24 +140,6 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
                 <span className="relative z-10 font-black">Ver Planos Disponíveis</span>
                 <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
-            </div>
-
-            {/* Minimal Guarantee Notes */}
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-300 pt-0.5">
-              <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                7 dias de garantia incondicional
-              </span>
-              <span className="text-slate-600">·</span>
-              <span className="inline-flex items-center gap-1.5 text-sky-300 font-medium">
-                <Zap className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-                Acesso imediato liberado
-              </span>
-              <span className="text-slate-600">·</span>
-              <span className="inline-flex items-center gap-1.5 text-slate-400 font-medium">
-                <Lock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                Sem fidelidade
-              </span>
             </div>
           </div>
         </div>

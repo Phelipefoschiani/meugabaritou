@@ -395,14 +395,6 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
               <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
-
-          <div className="relative z-10 flex items-center justify-center gap-2 text-[10px] text-slate-300 pt-0.5">
-            <span className="text-emerald-400 font-medium">✓ 7 dias de garantia</span>
-            <span className="text-slate-600">·</span>
-            <span className="text-sky-300 font-medium">✓ Acesso imediato</span>
-            <span className="text-slate-600">·</span>
-            <span className="text-slate-400 font-medium">Sem fidelidade</span>
-          </div>
         </div>
 
       </section>
