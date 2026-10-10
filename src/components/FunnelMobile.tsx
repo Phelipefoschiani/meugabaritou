@@ -378,10 +378,6 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
                 Estude com foco cirúrgico.
               </span>
             </h3>
-
-            <p className="text-xs text-slate-300 font-normal leading-relaxed">
-              Resoluções didáticas linha por linha, caderno automático de erros e simulados oficiais em folha A4.
-            </p>
           </div>
 
           <div className="relative z-10 pt-1">

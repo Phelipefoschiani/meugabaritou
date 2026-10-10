@@ -115,16 +115,13 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
 
           <div className="relative z-10 flex flex-col items-center gap-4">
             {/* Title & Concise Copy */}
-            <div className="space-y-2 max-w-xl mx-auto">
+            <div className="max-w-xl mx-auto">
               <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
                 Pare de gastar horas em fóruns confusos.
                 <span className="block mt-1 sm:mt-1.5 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
                   Estude com foco cirúrgico.
                 </span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
-                Resoluções didáticas explicadas linha por linha, caderno automático de erros e simulados oficiais em folha A4.
-              </p>
             </div>
 
             {/* Shimmering Direct Button */}
