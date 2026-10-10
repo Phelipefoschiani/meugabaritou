@@ -366,17 +366,12 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
 
         </div>
 
-        {/* High-Impact Mobile Conversion Callout */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border border-blue-500/40 p-5 text-white shadow-xl shadow-blue-950/40 space-y-4 mt-4">
-          <div className="absolute -top-16 -left-16 w-48 h-48 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
+        {/* Conversion Mobile Callout - Enxuto e direto */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border border-blue-500/40 p-4 text-white shadow-xl shadow-blue-950/30 space-y-3 mt-4 text-center">
+          <div className="absolute -top-16 -left-16 w-36 h-36 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-16 -right-16 w-36 h-36 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
           
-          <div className="relative z-10 space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-[10px] font-bold tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>DECISÃO INTELIGENTE · SEM RISCO</span>
-            </div>
-
+          <div className="relative z-10 space-y-1.5">
             <h3 className="text-base font-black leading-snug">
               Pare de gastar horas em fóruns confusos.{' '}
               <span className="block mt-0.5 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
@@ -384,35 +379,29 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
               </span>
             </h3>
 
-            <p className="text-xs text-slate-300 font-medium leading-relaxed">
+            <p className="text-xs text-slate-300 font-normal leading-relaxed">
               Resoluções didáticas linha por linha, caderno automático de erros e simulados oficiais em folha A4.
             </p>
-
-            <div className="space-y-1.5 pt-1 text-[11px] text-slate-300 font-medium">
-              <div className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>7 dias de garantia incondicional</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-sky-300 font-medium">
-                <Zap className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-                <span>Acesso liberado no mesmo instante</span>
-              </div>
-            </div>
           </div>
 
-          <div className="relative z-10 space-y-2 pt-1">
+          <div className="relative z-10 pt-1">
             <button
               type="button"
               onClick={onScrollToPlans}
-              className="relative group w-full overflow-hidden py-3.5 px-5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 active:scale-[0.98] text-white font-black text-xs tracking-wide shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 border border-blue-400/40 ring-2 ring-blue-400/20 cursor-pointer"
+              className="relative group w-full overflow-hidden py-3 px-5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 active:scale-[0.98] text-white font-extrabold text-xs tracking-wide shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 border border-blue-400/40 ring-2 ring-blue-400/20 cursor-pointer"
             >
               <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none animate-shimmer-sweep" />
               <span className="relative z-10">Ver Planos Disponíveis</span>
               <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
             </button>
-            <p className="text-[10px] text-center text-slate-400 font-medium">
-              A partir de R$ 21,60/mês · Sem fidelidade
-            </p>
+          </div>
+
+          <div className="relative z-10 flex items-center justify-center gap-2 text-[10px] text-slate-300 pt-0.5">
+            <span className="text-emerald-400 font-medium">✓ 7 dias de garantia</span>
+            <span className="text-slate-600">·</span>
+            <span className="text-sky-300 font-medium">✓ Acesso imediato</span>
+            <span className="text-slate-600">·</span>
+            <span className="text-slate-400 font-medium">Sem fidelidade</span>
           </div>
         </div>
 

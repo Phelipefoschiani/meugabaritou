@@ -1,5 +1,5 @@
 import React from 'react';
-import { XCircle, CheckCircle2, Zap, ArrowRight, ShieldCheck, Lock, Sparkles } from 'lucide-react';
+import { XCircle, CheckCircle2, Zap, ArrowRight, ShieldCheck, Lock } from 'lucide-react';
 import { BrandIcon } from './BrandLogo';
 import { BrandName } from './BrandName';
 
@@ -107,76 +107,57 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
 
         </div>
 
-        {/* High-Impact Conversion Callout Banner */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border border-blue-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-blue-950/40">
-          {/* Ambient Lighting Orbs */}
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+        {/* Conversion Callout Banner - Enxuto, mais estreito e direto ao ponto */}
+        <div className="max-w-3xl mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border border-blue-500/40 p-6 sm:p-7 shadow-xl shadow-blue-950/30 text-center">
+          {/* Subtle Ambient Lighting */}
+          <div className="absolute -top-16 -left-16 w-48 h-48 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10">
-            {/* Left Content */}
-            <div className="space-y-3.5 max-w-2xl">
-              {/* Kicker Tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>DECISÃO INTELIGENTE · SEM RISCO</span>
-              </div>
-
-              {/* Title & Value Prop */}
-              <div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
-                  Pare de gastar horas em fóruns confusos.{' '}
-                  <span className="block mt-1 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
-                    Estude com foco cirúrgico e método validado.
-                  </span>
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed mt-2.5">
-                  Economize até 5 meses de estudo desordenado com resoluções didáticas detalhadas, simulados oficiais em PDF para imprimir e caderno automático de erros.
-                </p>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs text-slate-300 font-medium">
-                <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  7 dias de garantia incondicional
+          <div className="relative z-10 flex flex-col items-center gap-4">
+            {/* Title & Concise Copy */}
+            <div className="space-y-2 max-w-xl mx-auto">
+              <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                Pare de gastar horas em fóruns confusos.{' '}
+                <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
+                  Estude com foco cirúrgico.
                 </span>
-                <span className="text-slate-600 hidden sm:inline">·</span>
-                <span className="inline-flex items-center gap-1.5 text-sky-300 font-medium">
-                  <Zap className="w-4 h-4 text-sky-400 shrink-0" />
-                  Acesso liberado no mesmo instante
-                </span>
-                <span className="text-slate-600 hidden sm:inline">·</span>
-                <span className="inline-flex items-center gap-1.5 text-slate-300 font-medium">
-                  <Lock className="w-4 h-4 text-slate-400 shrink-0" />
-                  Cancele com 1 clique a qualquer momento
-                </span>
-              </div>
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
+                Resoluções didáticas explicadas linha por linha, caderno automático de erros e simulados oficiais em folha A4.
+              </p>
             </div>
 
-            {/* Right Action Block with Shimmering Button */}
-            <div className="flex flex-col items-stretch sm:items-end gap-2.5 shrink-0 w-full lg:w-auto">
-              <div className="inline-flex items-center justify-center sm:justify-end gap-1.5 text-xs font-bold text-amber-300 tracking-wide">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-                <span>Planos a partir de R$ 21,60/mês</span>
-              </div>
-
+            {/* Shimmering Direct Button */}
+            <div className="pt-1">
               <button
                 type="button"
                 onClick={onOpenPlans}
-                className="relative group overflow-hidden px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm sm:text-base tracking-wide shadow-xl shadow-blue-600/35 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer border border-blue-400/40 flex items-center justify-center gap-3 ring-2 ring-blue-400/20 hover:ring-blue-400/50"
+                className="relative group overflow-hidden px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm sm:text-base tracking-wide shadow-lg shadow-blue-600/35 hover:shadow-xl hover:shadow-blue-500/45 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer border border-blue-400/40 flex items-center justify-center gap-2.5"
               >
                 {/* Continuous Shimmer Light Sweep */}
                 <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none animate-shimmer-sweep" />
 
                 <span className="relative z-10 font-black">Ver Planos Disponíveis</span>
-                <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1.5" />
+                <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
+            </div>
 
-              <p className="text-[11px] text-slate-400 text-center sm:text-right font-medium">
-                Sem fidelidade · Acesso imediato no e-mail
-              </p>
+            {/* Minimal Guarantee Notes */}
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-300 pt-0.5">
+              <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                7 dias de garantia incondicional
+              </span>
+              <span className="text-slate-600">·</span>
+              <span className="inline-flex items-center gap-1.5 text-sky-300 font-medium">
+                <Zap className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                Acesso imediato liberado
+              </span>
+              <span className="text-slate-600">·</span>
+              <span className="inline-flex items-center gap-1.5 text-slate-400 font-medium">
+                <Lock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                Sem fidelidade
+              </span>
             </div>
           </div>
         </div>
