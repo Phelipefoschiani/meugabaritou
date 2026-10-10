@@ -76,19 +76,19 @@ export const StudentPortalView: React.FC<StudentPortalViewProps> = ({
     <div className="min-h-screen bg-slate-50 text-slate-900 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-6">
         
-        {/* Trial Alert Ribbon */}
+        {/* Plano FREE Alert Ribbon */}
         {user.isTrial && (
-          <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 text-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+          <div className="p-4 rounded-xl bg-blue-50/90 border border-blue-200 text-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">
-                <Clock className="w-4 h-4" />
+                <Check className="w-4 h-4" />
               </div>
               <div>
                 <div className="font-bold text-xs sm:text-sm text-slate-900">
-                  Teste Grátis de 24 Horas Ativo
+                  Plano FREE: limite de 10 questões por dia
                 </div>
                 <div className="text-[11px] text-slate-600">
-                  Tempo restante: <strong>23h 58min</strong> • Acesso liberado a todas as ferramentas
+                  Você já respondeu <strong>{userStats.answeredToday} de 10</strong> questões hoje. Quer questões ilimitadas?
                 </div>
               </div>
             </div>
@@ -96,9 +96,9 @@ export const StudentPortalView: React.FC<StudentPortalViewProps> = ({
             <button
               type="button"
               onClick={onBackToFunnel}
-              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
+              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs whitespace-nowrap"
             >
-              Ver Planos Definitivos
+              Quer questões ilimitadas? Ver Planos
             </button>
           </div>
         )}
@@ -235,7 +235,35 @@ export const StudentPortalView: React.FC<StudentPortalViewProps> = ({
         </div>
 
         {/* Main Working Area: Question Solver */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+        {user.isTrial && userStats.answeredToday >= 10 ? (
+          <div className="bg-white rounded-2xl p-8 sm:p-10 border-2 border-blue-500 shadow-xl text-center space-y-4 max-w-xl mx-auto">
+            <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto shadow-xs">
+              <Check className="w-7 h-7 stroke-[2.5]" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              Limite diário atingido!
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              Você completou as <strong>10 questões de hoje</strong> permitidas no Plano FREE.
+            </p>
+            <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-950 font-bold text-xs sm:text-sm">
+              Quer questões ilimitadas?
+            </div>
+            <p className="text-[11px] sm:text-xs text-slate-500">
+              Assine um dos nossos planos para ter resolução ilimitada, simulados oficiais em PDF para imprimir e diagnóstico analítico de erros.
+            </p>
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={onBackToFunnel}
+                className="w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-blue-600/30 transition-all cursor-pointer"
+              >
+                Conheça os Planos & Desbloqueie Ilimitado →
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
           
           {/* Question Meta header */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
@@ -365,8 +393,8 @@ export const StudentPortalView: React.FC<StudentPortalViewProps> = ({
               </div>
             </div>
           )}
-
         </div>
+        )}
 
       </div>
     </div>

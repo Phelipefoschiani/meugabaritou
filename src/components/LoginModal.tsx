@@ -194,7 +194,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               }}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:underline cursor-pointer"
             >
-              <span>Experimente com o Teste Grátis de 24 Horas →</span>
+              <span>Cadastre-se gratuitamente (Plano FREE) →</span>
             </button>
           </div>
         )}

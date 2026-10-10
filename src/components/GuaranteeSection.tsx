@@ -22,7 +22,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
             {/* Cabeçalho do Quadrante */}
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
               <h3 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-black tracking-tight leading-tight flex flex-col items-center gap-1.5">
-                <span className="text-amber-500">Teste Grátis de 1 Dia</span>
+                <span className="text-amber-500">Cadastre-se Gratuitamente</span>
                 <span className="text-emerald-600">Garantia de 7 Dias</span>
                 <span className="text-blue-600">Compra 100% Segura pela Kiwify</span>
               </h3>
@@ -35,11 +35,11 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
             {/* Os 3 Pilares do Quadrante */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               
-              {/* 1. TESTE GRÁTIS DE 1 DIA */}
+              {/* 1. CADASTRE-SE GRATUITAMENTE */}
               <div className="bg-gradient-to-b from-amber-50/60 via-white to-amber-50/20 rounded-2xl p-6 border-2 border-amber-300/80 shadow-sm flex flex-col justify-between relative group hover:border-amber-400 transition-all hover:shadow-md">
                 <div className="space-y-4">
                   
-                  {/* Ícone / Selo de 24 Horas */}
+                  {/* Ícone */}
                   <div className="mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shadow-xs">
                       <Clock className="w-7 h-7 stroke-[2.2]" />
@@ -48,25 +48,29 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
 
                   <div>
                     <h4 className="text-lg font-black text-slate-900 tracking-tight mb-1.5">
-                      Teste Grátis de 1 Dia
+                      Cadastre-se Gratuitamente
                     </h4>
                     <p className="text-xs font-bold text-amber-800 mb-2.5">
-                      24 horas de acesso total sem compromisso
+                      Plano FREE: limite de 10 questões por dia
                     </p>
                     <p className="text-xs text-slate-600 leading-relaxed">
-                      Experimente a plataforma na prática antes de pagar qualquer valor. Crie sua conta em 30 segundos, monte simulados, responda questões e teste o método sem precisar informar cartão de crédito.
+                      Experimente a plataforma na prática sem pagar nada. Crie sua conta em 30 segundos, responda até 10 questões todos os dias e teste o método sem precisar de cartão de crédito. Quer questões ilimitadas? Desbloqueie nossos planos completos!
                     </p>
                   </div>
 
-                  {/* Vantagens do Teste */}
+                  {/* Vantagens do Plano FREE */}
                   <div className="space-y-1.5 pt-2 text-[11px] text-slate-700 font-medium border-t border-amber-100">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                      <span>Plano FREE: 10 questões por dia</span>
+                    </div>
                     <div className="flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                       <span>Sem cartão de crédito necessário</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                      <span>Liberação imediata em 30 segundos</span>
+                      <span>Quer questões ilimitadas? Conheça os planos</span>
                     </div>
                   </div>
                 </div>
@@ -83,7 +87,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
                         className="absolute inset-0 w-2/3 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] pointer-events-none animate-shimmer-sweep"
                         aria-hidden="true"
                       />
-                      <span className="relative z-10">Ativar Teste Grátis</span>
+                      <span className="relative z-10">Cadastre-se gratuitamente</span>
                       <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>

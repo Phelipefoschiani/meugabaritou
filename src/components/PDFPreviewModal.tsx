@@ -258,9 +258,6 @@ export const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
                     }`}
                   >
                     <span>Trimestral</span>
-                    <span className="bg-amber-300 text-amber-950 px-1.5 py-0.5 rounded text-[10px] font-extrabold">
-                      -20%
-                    </span>
                   </button>
                 </div>
               </div>
@@ -269,7 +266,7 @@ export const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
                 
                 {/* 1. Plano Intermediário */}
-                <div className="bg-gradient-to-b from-blue-50/70 via-white to-blue-50/30 rounded-2xl p-6 border-2 border-blue-500 shadow-md flex flex-col justify-between relative hover:border-blue-600 transition-all">
+                <div className="bg-white rounded-2xl p-6 border-2 border-blue-500 shadow-md flex flex-col justify-between relative hover:border-blue-600 transition-all">
                   <div className="absolute -top-3 left-6">
                     <span className="bg-blue-600 text-white border border-blue-700 px-3 py-0.5 rounded-full text-[11px] font-black uppercase tracking-wider flex items-center gap-1 shadow-xs">
                       <Star className="w-3 h-3 fill-amber-300 text-amber-300" />
@@ -288,17 +285,17 @@ export const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
                     </div>
 
                     {/* Price */}
-                    <div className="bg-white/90 p-3.5 rounded-xl border border-blue-100 mb-4">
+                    <div className="bg-blue-50/70 p-3.5 rounded-xl border border-blue-100 mb-4">
                       <div className="flex items-baseline gap-1">
                         <span className="text-xs font-bold text-slate-500">R$</span>
                         <span className="text-3xl font-black text-blue-900">
-                          {billingCycle === 'monthly' ? '47,00' : '37,60'}
+                          {billingCycle === 'monthly' ? '47,00' : '37,00'}
                         </span>
                         <span className="text-xs font-bold text-slate-500">/mês</span>
                       </div>
                       <div className="text-[11px] text-slate-600 mt-1 font-medium">
                         {billingCycle === 'quarterly'
-                          ? 'Faturado R$ 112,80 a cada 3 meses (20% OFF)'
+                          ? 'Faturado R$ 111,00 a cada 3 meses (Economize R$ 30,00)'
                           : 'Cobrança mensal sem fidelidade'}
                       </div>
                     </div>
@@ -376,13 +373,13 @@ export const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
                       <div className="flex items-baseline gap-1">
                         <span className="text-xs font-bold text-slate-500">R$</span>
                         <span className="text-3xl font-black text-purple-900">
-                          {billingCycle === 'monthly' ? '77,00' : '61,60'}
+                          {billingCycle === 'monthly' ? '77,00' : '57,00'}
                         </span>
                         <span className="text-xs font-bold text-slate-500">/mês</span>
                       </div>
                       <div className="text-[11px] text-slate-600 mt-1 font-medium">
                         {billingCycle === 'quarterly'
-                          ? 'Faturado R$ 184,80 a cada 3 meses (20% OFF)'
+                          ? 'Faturado R$ 171,00 a cada 3 meses (Economize R$ 60,00)'
                           : 'Cobrança mensal sem fidelidade'}
                       </div>
                     </div>

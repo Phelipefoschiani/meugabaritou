@@ -40,7 +40,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({
         <div className="flex flex-col">
           <div className="flex items-center gap-1 text-[11px] font-bold text-slate-900 leading-tight">
             <span>A partir de</span>
-            <span className="text-blue-600 font-black text-xs">R$ 21,60/mês</span>
+            <span className="text-blue-600 font-black text-xs">R$ 17,00/mês</span>
           </div>
           <span className="text-[10px] text-slate-500 font-medium leading-tight">
             7 dias de garantia total
@@ -58,7 +58,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({
               className="absolute inset-0 w-2/3 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] pointer-events-none animate-shimmer-sweep"
               aria-hidden="true"
             />
-            <span className="relative z-10">24h Grátis</span>
+            <span className="relative z-10">Cadastre-se grátis</span>
           </button>
 
           <button

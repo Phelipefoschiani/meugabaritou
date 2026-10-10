@@ -51,8 +51,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       name: candidateName,
       email: candidateEmail,
       phone: candidatePhone,
-      plan: 'Teste Grátis (24 Horas)',
-      planId: 'avancado',
+      plan: 'Plano FREE (10 questões/dia)',
+      planId: 'iniciante',
       isTrial: true,
     });
     onClose();
@@ -73,11 +73,32 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         </button>
 
         {/* Header Limpo */}
-        <div className="text-center mb-6 flex flex-col items-center">
+        <div className="text-center mb-5 flex flex-col items-center">
           <BrandLogo size="md" className="mb-3" />
           <h3 className="text-2xl font-black text-slate-900 tracking-tight">
-            Ativar Teste Grátis
+            Cadastre-se gratuitamente
           </h3>
+        </div>
+
+        {/* Aviso de Limite do Plano FREE */}
+        <div className="mb-5 p-3 rounded-xl bg-blue-50/80 border border-blue-200 text-xs text-slate-700 space-y-1">
+          <div className="font-extrabold text-blue-900">
+            Plano FREE: limite de 10 questões por dia.
+          </div>
+          <div className="text-[11px] text-slate-600 flex items-center justify-between flex-wrap gap-1 pt-0.5">
+            <span>Quer questões ilimitadas?</span>
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                const el = document.getElementById('planos');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="font-bold text-blue-700 hover:text-blue-900 underline cursor-pointer"
+            >
+              Conheça os planos →
+            </button>
+          </div>
         </div>
 
         {/* Formulário com Nome, E-mail e WhatsApp */}
@@ -142,12 +163,27 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
               <LockOpen className="w-5 h-5 text-emerald-300 relative z-10 shrink-0" />
               <span className="relative z-10 tracking-tight whitespace-nowrap drop-shadow-sm">
-                Ativar Teste Grátis
+                Cadastre-se gratuitamente
               </span>
               <ArrowRight className="w-5 h-5 text-white/90 relative z-10 shrink-0 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </form>
+
+        {/* Link para quem quer questões ilimitadas */}
+        <div className="mt-4 pt-3 border-t border-slate-100 text-center">
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
+              const el = document.getElementById('planos');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="text-xs text-slate-500 hover:text-blue-700 font-semibold transition-colors cursor-pointer"
+          >
+            Quer questões ilimitadas? Conheça os planos →
+          </button>
+        </div>
 
       </div>
     </div>

@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onClick={onOpenFreeTrial}
                     className="text-emerald-700 font-bold hover:underline cursor-pointer flex items-center gap-1"
                   >
-                    <span>Ativar Teste de 1 Dia</span>
+                    <span>Cadastre-se gratuitamente</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </li>
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({
               Acesso
             </h4>
             <p className="text-xs text-slate-600 mb-3">
-              Já é nosso aluno ou está no período de teste?
+              Já é nosso aluno ou cadastrado gratuitamente?
             </p>
             <button
               type="button"

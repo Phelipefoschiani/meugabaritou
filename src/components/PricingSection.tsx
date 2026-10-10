@@ -64,24 +64,24 @@ const PLAN_THEMES: Record<
     elevation: 'hover:-translate-y-1',
   },
   intermediario: {
-    // Retângulo 2: Azul Royal / Cobalto (Mais Escolhido - Destaque Central)
-    cardBg: 'bg-gradient-to-b from-blue-50/95 via-sky-50/30 to-white',
-    border: 'border-2 border-blue-600 hover:border-blue-700 ring-2 ring-blue-500/25',
-    shadow: 'shadow-2xl shadow-blue-600/25 lg:-translate-y-4 hover:shadow-blue-600/35 z-10',
+    // Retângulo 2: Destaque Central (Claro, limpo e com leitura impecável)
+    cardBg: 'bg-white',
+    border: 'border-2 border-blue-500 hover:border-blue-600 ring-4 ring-blue-100',
+    shadow: 'shadow-xl shadow-blue-500/10 lg:-translate-y-4 hover:shadow-2xl hover:shadow-blue-500/15 z-10',
     badgeBg: 'bg-blue-600 text-white',
     badgeText: 'text-white',
-    badgeBorder: 'border-blue-400 shadow-xl shadow-blue-600/30 ring-2 ring-white',
+    badgeBorder: 'border-blue-400 shadow-md',
     badgeIcon: <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300 shrink-0" />,
-    titleColor: 'text-blue-950',
-    actionBadge: 'bg-blue-600 text-white font-extrabold shadow-xs',
-    taglineColor: 'text-blue-900/80',
-    priceBox: 'bg-blue-100/50 border border-blue-200/90',
-    priceTextColor: 'text-blue-950',
-    audienceBox: 'bg-white/95 border border-blue-200 text-slate-700',
-    audienceLabelColor: 'text-blue-900',
+    titleColor: 'text-slate-900',
+    actionBadge: 'bg-blue-100 text-blue-800 border border-blue-200 font-extrabold',
+    taglineColor: 'text-slate-600',
+    priceBox: 'bg-blue-50/80 border border-blue-200',
+    priceTextColor: 'text-slate-950',
+    audienceBox: 'bg-slate-50/90 border border-slate-200 text-slate-700',
+    audienceLabelColor: 'text-slate-900',
     checkCircle: 'bg-blue-100 text-blue-700 border border-blue-200',
     checkIcon: 'text-blue-700',
-    button: 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-600/40 hover:shadow-2xl hover:shadow-blue-600/50 hover:scale-[1.02] ring-2 ring-blue-600/20 py-4 font-black',
+    button: 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-600/30 hover:shadow-2xl hover:shadow-blue-600/40 hover:scale-[1.01] ring-2 ring-blue-600/20 py-4 font-black',
     guaranteeIcon: 'text-blue-600',
     elevation: 'lg:-translate-y-4 hover:-translate-y-5',
   },
@@ -159,13 +159,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 }`}
               >
                 <span>Trimestral</span>
-                <span className={`px-1.5 py-0.5 rounded text-[10px] font-black shrink-0 ${
-                  billingCycle === 'quarterly'
-                    ? 'bg-amber-300 text-amber-950'
-                    : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                }`}>
-                  -20%
-                </span>
               </button>
             </div>
           </div>
@@ -183,13 +176,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 key={plan.id}
                 className={`rounded-2xl p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 relative ${theme.cardBg} ${theme.border} ${theme.shadow} ${theme.elevation}`}
               >
-                {/* Efeito Border Beam de Alta Fidelidade no Plano Mais Escolhido */}
-                {plan.id === 'intermediario' && (
-                  <div className="absolute -inset-[3px] rounded-2xl overflow-hidden pointer-events-none -z-10">
-                    <div className="absolute inset-[-100%] animate-spin-slow bg-[conic-gradient(from_0deg,#2563eb_0deg,#38bdf8_60deg,transparent_120deg,transparent_240deg,#38bdf8_300deg,#2563eb_360deg)] opacity-70" />
-                  </div>
-                )}
-
                 {/* Plan Top Badge */}
                 {plan.badge && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
@@ -233,7 +219,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       </span>
                       {billingCycle === 'quarterly' && (
                         <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded border border-emerald-200">
-                          20% OFF • Economize R$ {formatPriceBRL((plan.priceMonthly * 3) - totalPrice)}
+                          Economize R$ {formatPriceBRL((plan.priceMonthly * 3) - totalPrice)}
                         </span>
                       )}
                     </div>

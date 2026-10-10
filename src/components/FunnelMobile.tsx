@@ -153,7 +153,7 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
               className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-sm shadow-lg shadow-amber-950/20 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer transition-all"
             >
               <Clock className="w-4 h-4 text-slate-950" />
-              <span>Experimentar Grátis por 24 Horas</span>
+              <span>Cadastre-se Gratuitamente</span>
               <ArrowRight className="w-4 h-4 opacity-75" />
             </button>
 
@@ -360,7 +360,7 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
               <li>✓ Provas reais diagramadas em PDF para imprimir</li>
               <li>✓ Caderno automático que salva seus erros para revisar</li>
               <li>✓ Treino do ritmo de prova com cronômetro e cartão-resposta</li>
-              <li>✓ A partir de R$ 21,60/mês no trimestral (acesso imediato)</li>
+              <li>✓ A partir de R$ 17,00/mês no trimestral (acesso imediato)</li>
             </ul>
           </div>
 
@@ -460,9 +460,6 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
               }`}
             >
               <span>Trimestral</span>
-              <span className="text-[10px] bg-amber-400 text-slate-950 px-1.5 py-0.2 rounded-full font-black">
-                -20%
-              </span>
             </button>
           </div>
 
@@ -480,12 +477,12 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
                 </div>
                 <div className="text-right">
                   <div className="text-xl font-black text-slate-900">
-                    R$ {billingCycle === 'quarterly' ? '21,60' : '27,00'}
+                    R$ {billingCycle === 'quarterly' ? '17,00' : '27,00'}
                     <span className="text-[11px] font-normal text-slate-500">/mês</span>
                   </div>
                   {billingCycle === 'quarterly' && (
                     <div className="text-[10px] text-emerald-700 font-semibold">
-                      Cobrado R$ 64,80 a cada 3 meses
+                      Cobrado R$ 51,00 a cada 3 meses (Economize R$ 30,00)
                     </div>
                   )}
                 </div>
@@ -524,7 +521,7 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
             </div>
 
             {/* 2. PLANO INTERMEDIÁRIO (MAIS ESCOLHIDO - DESTAQUE MÁXIMO) */}
-            <div className="bg-gradient-to-b from-blue-50/90 to-white rounded-2xl p-5 border-2 border-blue-600 shadow-xl shadow-blue-600/15 relative space-y-3">
+            <div className="bg-white rounded-2xl p-5 border-2 border-blue-600 shadow-xl shadow-blue-600/10 relative space-y-3">
               
               {/* Badge Topo */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-black uppercase px-3 py-0.5 rounded-full shadow-md tracking-wider flex items-center gap-1">
@@ -541,12 +538,12 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-black text-blue-950">
-                    R$ {billingCycle === 'quarterly' ? '37,60' : '47,00'}
+                    R$ {billingCycle === 'quarterly' ? '37,00' : '47,00'}
                     <span className="text-xs font-normal text-slate-500">/mês</span>
                   </div>
                   {billingCycle === 'quarterly' && (
                     <div className="text-[10px] text-blue-700 font-bold">
-                      Cobrado R$ 112,80 no trimestre (-20%)
+                      Cobrado R$ 111,00 no trimestre (Economize R$ 30,00)
                     </div>
                   )}
                 </div>
@@ -604,12 +601,12 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
                 </div>
                 <div className="text-right">
                   <div className="text-xl font-black text-slate-900">
-                    R$ {billingCycle === 'quarterly' ? '61,60' : '77,00'}
+                    R$ {billingCycle === 'quarterly' ? '57,00' : '77,00'}
                     <span className="text-[11px] font-normal text-slate-500">/mês</span>
                   </div>
                   {billingCycle === 'quarterly' && (
                     <div className="text-[10px] text-purple-700 font-semibold">
-                      Cobrado R$ 184,80 a cada 3 meses
+                      Cobrado R$ 171,00 a cada 3 meses (Economize R$ 60,00)
                     </div>
                   )}
                 </div>

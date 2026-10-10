@@ -233,10 +233,10 @@ export const SimuladosSection: React.FC<SimuladosSectionProps> = ({
                 className="w-full py-3 sm:py-3.5 px-4 sm:px-5 min-h-[48px] rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:scale-[1.01]"
               >
                 <Zap className="w-4 h-4 fill-cyan-200 text-cyan-200" />
-                <span>Testar Simulado Digital Grátis</span>
+                <span>Cadastre-se Gratuitamente</span>
               </button>
               <span className="block text-center text-[10px] sm:text-[11px] text-slate-400 mt-2">
-                Acesse o ambiente do aluno durante 24 horas sem custo
+                Plano FREE: limite de 10 questões por dia sem cartão de crédito
               </span>
             </div>
           </div>

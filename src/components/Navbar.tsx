@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   />
 
                   <span className="relative z-10 tracking-tight whitespace-nowrap drop-shadow-xs">
-                    <span className="hidden xs:inline">Teste </span>Grátis 1 Dia
+                    Cadastre-se gratuitamente
                   </span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-900 relative z-10 transition-transform group-hover:translate-x-1" />
                 </button>

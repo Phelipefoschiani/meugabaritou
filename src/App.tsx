@@ -148,8 +148,8 @@ export default function App() {
       name: trialData.name,
       email: trialData.email,
       phone: trialData.phone,
-      plan: 'Teste Grátis 24 Horas',
-      planId: 'intermediario',
+      plan: 'Plano FREE (10 questões/dia)',
+      planId: 'iniciante',
       isTrial: true,
     });
     setIsFreeTrialOpen(false);

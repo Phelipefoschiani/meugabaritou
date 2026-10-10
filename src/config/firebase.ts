@@ -178,7 +178,7 @@ export async function syncStudentProfile(email: string, name?: string, planId: '
     id: currentUid,
     name: (name || email.split('@')[0] || 'Estudante').slice(0, 100),
     email: email.slice(0, 150),
-    plan: isTrial ? 'Teste Grátis (24 Horas)' : (planId === 'avancado' ? 'Avançado 🚀 (Elite do Concurso)' : (planId === 'iniciante' ? 'Iniciante 🎯 (Base Sólida)' : 'Intermediário ⭐ (Pratique + Analise)')),
+    plan: isTrial ? 'Plano FREE (10 questões/dia)' : (planId === 'avancado' ? 'Avançado 🚀 (Elite do Concurso)' : (planId === 'iniciante' ? 'Iniciante 🎯 (Base Sólida)' : 'Intermediário ⭐ (Pratique + Analise)')),
     planId,
     isTrial,
     phone: phone ? phone.slice(0, 30) : undefined,
