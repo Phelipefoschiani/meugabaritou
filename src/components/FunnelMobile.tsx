@@ -400,11 +400,6 @@ export const FunnelMobile: React.FC<FunnelMobileProps> = ({
       {/* ============================================================== */}
       <section className="px-4 py-5 max-w-md mx-auto">
         <div className="bg-gradient-to-br from-slate-900 to-blue-950 rounded-2xl p-5 text-white space-y-3 shadow-lg">
-          <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-400/30">
-            <FileText className="w-3 h-3" />
-            <span>Formato Oficial A4</span>
-          </div>
-
           <h3 className="text-base font-black leading-snug">
             Quer ver como é a folha de prova em PDF pronta para impressão?
           </h3>

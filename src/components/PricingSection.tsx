@@ -127,10 +127,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider">
-            <span>Investimento Inteligente</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
             Planos & Preços Oficiais
           </h2>

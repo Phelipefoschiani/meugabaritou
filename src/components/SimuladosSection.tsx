@@ -144,13 +144,10 @@ export const SimuladosSection: React.FC<SimuladosSectionProps> = ({
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-bl-full pointer-events-none -z-10" />
 
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="mb-4">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center shadow-md shadow-amber-500/25">
                   <Printer className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
-                  Sensação de Prova Real
-                </span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-2">
@@ -198,13 +195,10 @@ export const SimuladosSection: React.FC<SimuladosSectionProps> = ({
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 rounded-bl-full pointer-events-none -z-10" />
 
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="mb-4">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-600/25">
                   <Monitor className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full bg-blue-100 text-blue-900 border border-blue-200">
-                  Praticidade & Velocidade
-                </span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-2">
@@ -253,15 +247,9 @@ export const SimuladosSection: React.FC<SimuladosSectionProps> = ({
         <div className="bg-white/85 backdrop-blur-md rounded-3xl border border-blue-200/80 p-5 sm:p-7 shadow-md overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-200/80">
             <div>
-              <div className="flex items-center gap-2">
-                <h4 className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
-                  Simulados Prontos para Treino Imediato
-                </h4>
-                <span className="hidden xs:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                  Atualizados
-                </span>
-              </div>
+              <h4 className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
+                Simulados Prontos para Treino Imediato
+              </h4>
               <p className="text-xs text-slate-500 mt-0.5">
                 Role ou passe o mouse para pausar e ver detalhes de cada prova ou monte um personalizado.
               </p>

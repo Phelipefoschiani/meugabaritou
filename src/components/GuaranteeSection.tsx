@@ -40,13 +40,10 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
                 <div className="space-y-4">
                   
                   {/* Ícone / Selo de 24 Horas */}
-                  <div className="flex items-center justify-between">
+                  <div className="mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shadow-xs">
                       <Clock className="w-7 h-7 stroke-[2.2]" />
                     </div>
-                    <span className="text-[11px] font-black uppercase tracking-wider text-amber-900 bg-amber-200/80 px-2.5 py-1 rounded-full border border-amber-300">
-                      1 Dia Grátis
-                    </span>
                   </div>
 
                   <div>
@@ -98,13 +95,9 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
                 <div className="space-y-4">
                   
                   {/* Ícone / Selo Kiwify */}
-                  <div className="flex items-center justify-between">
+                  <div className="mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-blue-100 border border-blue-300 flex items-center justify-center text-blue-700 shadow-xs">
                       <Lock className="w-7 h-7 stroke-[2.2]" />
-                    </div>
-                    <div className="flex items-center gap-1 bg-blue-900 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>Kiwify Segura</span>
                     </div>
                   </div>
 
@@ -145,13 +138,10 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onOpenFreeTr
                 <div className="space-y-4">
                   
                   {/* Ícone / Selo de 7 Dias */}
-                  <div className="flex items-center justify-between">
+                  <div className="mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 shadow-xs">
                       <ShieldCheck className="w-8 h-8 stroke-[2.2]" />
                     </div>
-                    <span className="text-[11px] font-black uppercase tracking-wider text-emerald-900 bg-emerald-200/90 px-2.5 py-1 rounded-full border border-emerald-300">
-                      7 Dias Incondicional
-                    </span>
                   </div>
 
                   <div>

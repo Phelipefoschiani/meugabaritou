@@ -289,12 +289,11 @@ export const SocialProofSection: React.FC<SocialProofSectionProps> = () => {
           >
             {/* Topo do Card */}
             <div className="mb-4">
-              <div className="flex items-center justify-between mb-2 text-xs font-bold text-slate-500">
+              <div className="flex items-center mb-2 text-xs font-bold text-slate-500">
                 <span className="flex items-center gap-1.5 text-blue-600 font-extrabold">
                   <Smartphone className="w-4 h-4 text-blue-600" />
                   No Celular & Web App
                 </span>
-                <span>Na Rua ou Intervalos</span>
               </div>
 
               <h3 className="text-lg sm:text-xl font-black text-slate-900 leading-snug">
@@ -414,13 +413,10 @@ export const SocialProofSection: React.FC<SocialProofSectionProps> = () => {
           >
             {/* Topo do Card */}
             <div className="mb-4">
-              <div className="flex items-center justify-between mb-2 text-xs font-bold text-slate-500">
+              <div className="flex items-center mb-2 text-xs font-bold text-slate-500">
                 <span className="flex items-center gap-1.5 text-indigo-600 font-extrabold">
                   <Laptop className="w-4 h-4 text-indigo-600" />
                   No Computador & Web
-                </span>
-                <span className="text-indigo-600 font-black text-[11px] bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">
-                  Mais Usado
                 </span>
               </div>
 
@@ -540,12 +536,11 @@ export const SocialProofSection: React.FC<SocialProofSectionProps> = () => {
           >
             {/* Topo do Card */}
             <div className="mb-4">
-              <div className="flex items-center justify-between mb-2 text-xs font-bold text-slate-500">
+              <div className="flex items-center mb-2 text-xs font-bold text-slate-500">
                 <span className="flex items-center gap-1.5 text-emerald-600 font-extrabold">
                   <Printer className="w-4 h-4 text-emerald-600" />
                   No Papel (PDF A4)
                 </span>
-                <span>Modo Prova Real</span>
               </div>
 
               <h3 className="text-lg sm:text-xl font-black text-slate-900 leading-snug">

@@ -75,9 +75,6 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
 
           {/* Card: Meu Gabaritou */}
           <div className="rounded-2xl border-2 border-blue-500 bg-blue-50/40 p-6 sm:p-8 shadow-xl shadow-blue-500/10 relative">
-            <div className="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-blue-600 text-white text-[11px] font-black tracking-wider uppercase shadow-md">
-              Metodologia Moderna
-            </div>
 
             <div className="flex items-center gap-2 text-blue-700 font-extrabold text-sm uppercase tracking-wider mb-6">
               <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
