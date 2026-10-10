@@ -1,5 +1,5 @@
 import React from 'react';
-import { XCircle, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
+import { XCircle, CheckCircle2, Zap, ArrowRight, ShieldCheck, Lock, Sparkles } from 'lucide-react';
 import { BrandIcon } from './BrandLogo';
 import { BrandName } from './BrandName';
 
@@ -49,7 +49,7 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
         </div>
 
         {/* Comparison Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           
           {/* Card: Plataformas Tradicionais */}
           <div className="rounded-2xl border border-rose-200 bg-rose-50/30 p-6 sm:p-8">
@@ -107,25 +107,78 @@ export const ComparisonVsTraditionalSection: React.FC<ComparisonVsTraditionalPro
 
         </div>
 
-        {/* Bottom Callout */}
-        <div className="bg-slate-50 rounded-2xl border border-slate-200 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="space-y-0.5">
-            <div className="font-bold text-sm text-slate-900">
-              Pare de gastar horas em fóruns confusos. Estude com foco cirúrgico.
+        {/* High-Impact Conversion Callout Banner */}
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border border-blue-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-blue-950/40">
+          {/* Ambient Lighting Orbs */}
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10">
+            {/* Left Content */}
+            <div className="space-y-3.5 max-w-2xl">
+              {/* Kicker Tag */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>DECISÃO INTELIGENTE · SEM RISCO</span>
+              </div>
+
+              {/* Title & Value Prop */}
+              <div>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
+                  Pare de gastar horas em fóruns confusos.{' '}
+                  <span className="block mt-1 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
+                    Estude com foco cirúrgico e método validado.
+                  </span>
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed mt-2.5">
+                  Economize até 5 meses de estudo desordenado com resoluções didáticas detalhadas, simulados oficiais em PDF para imprimir e caderno automático de erros.
+                </p>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs text-slate-300 font-medium">
+                <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                  7 dias de garantia incondicional
+                </span>
+                <span className="text-slate-600 hidden sm:inline">·</span>
+                <span className="inline-flex items-center gap-1.5 text-sky-300 font-medium">
+                  <Zap className="w-4 h-4 text-sky-400 shrink-0" />
+                  Acesso liberado no mesmo instante
+                </span>
+                <span className="text-slate-600 hidden sm:inline">·</span>
+                <span className="inline-flex items-center gap-1.5 text-slate-300 font-medium">
+                  <Lock className="w-4 h-4 text-slate-400 shrink-0" />
+                  Cancele com 1 clique a qualquer momento
+                </span>
+              </div>
             </div>
-            <div className="text-xs text-slate-500">
-              Acesso completo com cancelamento livre a qualquer momento e 7 dias de garantia.
+
+            {/* Right Action Block with Shimmering Button */}
+            <div className="flex flex-col items-stretch sm:items-end gap-2.5 shrink-0 w-full lg:w-auto">
+              <div className="inline-flex items-center justify-center sm:justify-end gap-1.5 text-xs font-bold text-amber-300 tracking-wide">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+                <span>Planos a partir de R$ 21,60/mês</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={onOpenPlans}
+                className="relative group overflow-hidden px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm sm:text-base tracking-wide shadow-xl shadow-blue-600/35 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer border border-blue-400/40 flex items-center justify-center gap-3 ring-2 ring-blue-400/20 hover:ring-blue-400/50"
+              >
+                {/* Continuous Shimmer Light Sweep */}
+                <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none animate-shimmer-sweep" />
+
+                <span className="relative z-10 font-black">Ver Planos Disponíveis</span>
+                <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1.5" />
+              </button>
+
+              <p className="text-[11px] text-slate-400 text-center sm:text-right font-medium">
+                Sem fidelidade · Acesso imediato no e-mail
+              </p>
             </div>
           </div>
-
-          <button
-            type="button"
-            onClick={onOpenPlans}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-600/20 transition-all cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
-          >
-            <span>Ver Planos Disponíveis</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
         </div>
 
       </div>
