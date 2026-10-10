@@ -1,0 +1,131 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. GLOBAL SAFETY NET: Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. CONNECTION HEALTH-CHECK
+    match /test/connection {
+      allow read: if true;
+    }
+
+    // 3. GLOBAL HELPERS
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // 4. USERS COLLECTION
+    function isValidUser(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.name is string && data.name.size() >= 1 && data.name.size() <= 100
+        && data.email is string && data.email.size() >= 3 && data.email.size() <= 150
+        && data.planId in ['iniciante', 'intermediario', 'avancado', 'trial']
+        && (!('phone' in data) || (data.phone is string && data.phone.size() <= 30))
+        && (!('plan' in data) || (data.plan is string && data.plan.size() <= 80))
+        && (!('isTrial' in data) || data.isTrial is bool);
+    }
+
+    match /users/{userId} {
+      allow get: if isSignedIn() && (request.auth.uid == userId);
+      allow list: if isSignedIn() && resource.data.id == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.auth.uid == userId
+        && isValidId(userId)
+        && isValidUser(incoming())
+        && incoming().id == request.auth.uid
+        && incoming().keys().hasAll(['id', 'name', 'email', 'planId'])
+        && incoming().keys().hasOnly(['id', 'name', 'email', 'plan', 'planId', 'isTrial', 'phone', 'createdAt', 'updatedAt']);
+      allow update: if isSignedIn()
+        && request.auth.uid == userId
+        && isValidId(userId)
+        && isValidUser(incoming())
+        && incoming().id == existing().id
+        && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'plan', 'planId', 'isTrial', 'phone', 'updatedAt']);
+      allow delete: if false;
+    }
+
+    // 5. STUDY PROGRESS COLLECTION
+    function isValidStudyProgress(data) {
+      return data.userId is string && data.userId.size() <= 128
+        && data.answeredToday is number && data.answeredToday >= 0
+        && data.correctCount is number && data.correctCount >= 0
+        && data.errorsCount is number && data.errorsCount >= 0
+        && (!('streakDays' in data) || (data.streakDays is number && data.streakDays >= 0));
+    }
+
+    match /studyProgress/{userId} {
+      allow get: if isSignedIn() && (request.auth.uid == userId);
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.auth.uid == userId
+        && isValidId(userId)
+        && isValidStudyProgress(incoming())
+        && incoming().userId == request.auth.uid
+        && incoming().keys().hasAll(['userId', 'answeredToday', 'correctCount', 'errorsCount'])
+        && incoming().keys().hasOnly(['userId', 'answeredToday', 'correctCount', 'errorsCount', 'streakDays', 'updatedAt']);
+      allow update: if isSignedIn()
+        && request.auth.uid == userId
+        && isValidId(userId)
+        && isValidStudyProgress(incoming())
+        && incoming().userId == existing().userId
+        && incoming().diff(existing()).affectedKeys().hasOnly(['answeredToday', 'correctCount', 'errorsCount', 'streakDays', 'updatedAt']);
+      allow delete: if false;
+    }
+
+    // 6. TRIALS COLLECTION
+    function isValidTrial(data) {
+      return data.name is string && data.name.size() >= 1 && data.name.size() <= 100
+        && data.email is string && data.email.size() >= 3 && data.email.size() <= 150
+        && data.phone is string && data.phone.size() >= 8 && data.phone.size() <= 30
+        && data.status in ['active', 'expired'];
+    }
+
+    match /trials/{trialId} {
+      allow get: if isSignedIn() && resource.data.email == request.auth.token.email;
+      allow list: if false;
+      allow create: if isValidId(trialId)
+        && isValidTrial(incoming())
+        && incoming().keys().hasAll(['name', 'email', 'phone', 'status'])
+        && incoming().keys().hasOnly(['id', 'name', 'email', 'phone', 'status', 'createdAt', 'expiresAt']);
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    // 7. ANSWERS LOG COLLECTION
+    function isValidAnswer(data) {
+      return data.userId is string && data.userId.size() <= 128
+        && data.questionId is number
+        && data.selectedOption is string && data.selectedOption.size() <= 5
+        && data.isCorrect is bool;
+    }
+
+    match /answers/{answerId} {
+      allow get: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn()
+        && isValidId(answerId)
+        && isValidAnswer(incoming())
+        && incoming().userId == request.auth.uid
+        && incoming().keys().hasAll(['userId', 'questionId', 'selectedOption', 'isCorrect'])
+        && incoming().keys().hasOnly(['userId', 'questionId', 'selectedOption', 'isCorrect', 'answeredAt']);
+      allow update: if false;
+      allow delete: if false;
+    }
+
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Perfil e status do plano do estudante no Meu Gabaritou.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "UID do usuário do Firebase Auth",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "description": "Nome completo do estudante",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "E-mail de acesso à plataforma",
+          "minLength": 3,
+          "maxLength": 150
+        },
+        "plan": {
+          "type": "string",
+          "description": "Nome descritivo do plano adquirido",
+          "maxLength": 80
+        },
+        "planId": {
+          "type": "string",
+          "description": "Identificador do plano",
+          "enum": ["iniciante", "intermediario", "avancado", "trial"]
+        },
+        "isTrial": {
+          "type": "boolean",
+          "description": "Indica se é acesso de teste de 24h"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Telefone / WhatsApp do estudante",
+          "maxLength": 30
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp de criação"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp da última atualização"
+        }
+      },
+      "required": ["id", "name", "email", "planId"]
+    },
+    "StudyProgress": {
+      "title": "StudyProgress",
+      "description": "Progresso e estatísticas de resolução de questões do aluno.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID do estudante",
+          "maxLength": 128
+        },
+        "answeredToday": {
+          "type": "number",
+          "description": "Quantidade de questões respondidas no dia"
+        },
+        "correctCount": {
+          "type": "number",
+          "description": "Total de acertos"
+        },
+        "errorsCount": {
+          "type": "number",
+          "description": "Total de erros"
+        },
+        "streakDays": {
+          "type": "number",
+          "description": "Dias consecutivos de treino (ofensiva)"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Data e hora da última resolução"
+        }
+      },
+      "required": ["userId", "answeredToday", "correctCount", "errorsCount"]
+    },
+    "TrialRegistration": {
+      "title": "TrialRegistration",
+      "description": "Registro de lead e ativação de teste de 24h sem cartão.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único do registro de teste",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "description": "Nome do candidato",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "E-mail informado no teste",
+          "minLength": 3,
+          "maxLength": 150
+        },
+        "phone": {
+          "type": "string",
+          "description": "WhatsApp para recebimento do caderno",
+          "minLength": 8,
+          "maxLength": 30
+        },
+        "status": {
+          "type": "string",
+          "description": "Status do teste",
+          "enum": ["active", "expired"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Data e hora de ativação"
+        },
+        "expiresAt": {
+          "type": "string",
+          "description": "Data e hora de expiração (24 horas após)"
+        }
+      },
+      "required": ["name", "email", "phone", "status"]
+    },
+    "AnswerLog": {
+      "title": "AnswerLog",
+      "description": "Log individual de resposta para histórico e Caderno de Erros.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID do estudante que respondeu",
+          "maxLength": 128
+        },
+        "questionId": {
+          "type": "number",
+          "description": "ID da questão resolvida"
+        },
+        "selectedOption": {
+          "type": "string",
+          "description": "Letra ou alternativa marcada",
+          "maxLength": 5
+        },
+        "isCorrect": {
+          "type": "boolean",
+          "description": "Se a resposta estava correta"
+        },
+        "answeredAt": {
+          "type": "string",
+          "description": "Data e hora da resposta"
+        }
+      },
+      "required": ["userId", "questionId", "selectedOption", "isCorrect"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Perfil e dados de plano de cada aluno registrado."
+    },
+    "/studyProgress/{userId}": {
+      "schema": "StudyProgress",
+      "description": "Métricas diárias e pontuação do aluno no portal."
+    },
+    "/trials/{trialId}": {
+      "schema": "TrialRegistration",
+      "description": "Ativações de 24h de teste gratuito realizadas na landing page."
+    },
+    "/answers/{answerId}": {
+      "schema": "AnswerLog",
+      "description": "Histórico de questões respondidas pelos estudantes."
+    }
+  }
+}

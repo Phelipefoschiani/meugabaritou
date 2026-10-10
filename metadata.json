@@ -1,0 +1,6 @@
+{
+  "name": "Meu Gabaritou",
+  "description": "Funil de vendas e plataforma inteligente de questões, simulados digitais e impressos em PDF para ENEM e Concursos Públicos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
